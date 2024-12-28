@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fce4d6; /* Warna latar belakang yang lebih cerah */
+            font-family: 'Roboto', sans-serif;
+            overflow: auto; /* Allow scrolling */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            text-align: center; /* Center text */
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ff69b4; /* Warna pink */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+
+        .name {
+            margin-top: 20px;
+            font-size: 28px; /* Ukuran font lebih besar */
+            color: #ff69b4; /* Warna pink */
+            animation: fadeIn 2s;
+        }
+
+        #musicControl {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            background-color: afce4d6(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #playPauseBtn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        #volumeSlider {
+            width: 8px;
+            height: 2px;
+            color: #ff69b4;
+        }
+
+        .info-container, .about-container, .education-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            transition: transform 0.3s; /* Efek transisi */
+        }
+
+        .info-container:hover, .about-container:hover, .education-container:hover {
+            transform: scale(1.02); /* Efek zoom saat hover */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: #ff69b4; /* Warna pink */
+            border-radius: 50%;
+            animation: rise 2s forwards;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Tambahan gaya untuk teks */
+        h2 {
+            color: #ff69b4; /* Warna pink */
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333; /* Warna teks yang lebih gelap untuk kontras */
+            line-height: 1.6; /* Jarak antar baris */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="particle-container"></div>
+        <img src="erin.png" alt="Foto Profil" class="profile-photo">
+        <h1 class="name">Erin Neisya</h1>
+
+        <div class="info-container">
+            <h2>Informasi Pribadi</h2>
+            <p><strong>Nama:</strong> Erin Neisya</p>
+            <p><strong>Jenis Kelamin:</strong> Perempuan</p>
+            <p><strong>Tempat Tanggal Lahir:</strong> Bekasi, 17 Desember 2007</p>
+            <p><strong>Hobi:</strong> Olahraga Bola Voli</p>
+            <p><strong>Motivasi:</strong> "Don't Give Up On Your Journey"</p>
+        </div>
+
+        <div class="about-container">
+            <h2>Tentang Saya</h2>
+            <p>Perkenalkan saya Erin Neisya, anak perempuan yang lahir pada 17 Desember 2007. Dimana masa kecil saya yang penuh keceriaan dan kebahagiaan serta petualangan yang seru. Kenangan indah yang tidak akan terulang kembali.</p>
+            <p>Saat memasuki sekolah dasar, aku mulai belajar banyak hal baru. Dari membaca dan menulis hingga mengenal angka. Aku juga menemukan minat dalam olahraga yang membuat hari-hariku semakin berwarna.</p>
+            <p>Di masa remaja, aku mulai merasakan perubahan. Karena mempunyai lingkungan baru, teman-teman baru, dan pengalaman baru. Aku belajar tentang persahabatan dan bagaimana cara beradaptasi dengan perubahan yang ada di sekitarku. Setiap pengalaman baru membentuk siapa aku sekarang dan membantuku untuk terus berkembang.</p>
+        </div>
+
+        <div class="education-container">
+            <h2>Riwayat Pendidikan</h2>
+            <p><strong>SD:</strong> SDN Ciantra 01</p>
+            <p><strong>SMP:</strong> MTSN 4 Bekasi</p>
+            <p><strong>SMA:</strong> SMAN 2 Cikarang Selatan</p>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="mameng.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div id="musicControl">
+        <button id="playPauseBtn">Play</button>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+    </div>
+
+    <script>
+        const particleContainer = document.querySelector('.particle-container');
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5; // Ukuran partikel acak
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.bottom = '0px'; // Mulai dari bawah
+            particle.style.animationDuration = (Math.random() * 2 + 1) + 's'; // Durasi acak
+            particle.style.opacity = Math.random(); // Opasitas acak
+            particleContainer.appendChild(particle);
+
+            // Menghapus partikel setelah animasi selesai
+            setTimeout(() => {
+                particle.remove();
+            }, 2000);
+        }
+
+        // Membuat partikel setiap 300ms
+        setInterval(createParticle, 300);
+
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        let isPlaying = false;
+
+    playPauseBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            playPauseBtn.textContent = 'Play';
+        } else {
+            audio.play();
+            playPauseBtn.textContent = 'Pause';
+        }
+        isPlaying = !isPlaying;
+    });
+
+    volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+    });
+    </script>
+</body>
+</html>
